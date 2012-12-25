@@ -38,5 +38,9 @@
     "agnostic",
     "bdd",
     "test"
-  ]
+  ],
+  "dependencies": {
+    "traverse": "~0.6.3",
+    "vows": "~0.7.0"
+  }
 }

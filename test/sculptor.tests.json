@@ -1,7 +1,7 @@
 [{
-  'A Vows sculptor': {
-    'processing a set of commands': {
-      'outputs an expected suite': true
+  "A Vows sculptor": {
+    "processing a set of commands": {
+      "outputs an expected suite": true
     }
   }
 }]
