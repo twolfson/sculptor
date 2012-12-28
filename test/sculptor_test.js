@@ -2,11 +2,15 @@ var Sculptor = require('../lib/sculptor.js'),
     vowsSculptor = new Sculptor('vows');
 
 vowsSculptor.addCommands({
-  'A Vows sculptor': function () {
-    return new Sculptor('vows');
+  'A Vows sculptor': function (topic) {
+    return {'sculptor': new Sculptor('vows')};
   },
-  'processing a set of commands': function () {
-    return '';
+  // TODO: We could have that this test running is a validation of sculptor itself (how meta)
+  'processing a set of commands': function (topic) {
+    topic.sculptor.addCommands({
+
+    });
+    return topic;
   },
   'outputs an expected suite': function () {
   }
