@@ -11,23 +11,36 @@ module.exports = {
     assert.equal(topic, 1, 'One is equal to one');
   },
 
-  // Second batch
-  // TODO: Aliasing is not yet available but coming soon
-  // 'Additionally, it can handle multiple batches': 'A skeletal test',
-  'Additionally, it can handle multiple batches': function (topic) {
-    return this;
-  },
-  'and re-use tests': function (topic) {
+  // Utility functions
+  'pass': function (topic) {
     return topic;
   },
-  // 'via aliasing and directly': 'can be processed via Sculptor',
-  'via aliasing and directly': function () {
-    return 1;
-  },
+
+  // Second batch
+  'Additionally, it can handle multiple batches': 'A skeletal test',
+  'and re-use tests': 'pass',
+  'via aliasing and directly': 'can be processed via Sculptor',
 
   // Third batch
   // TODO: Actually use partitioning and chaining
-  // 'Also, chaining': 'A skeletal test',
-  // 'and partitioning': 'A skeletal test',
-  // 'of test items is possible': 'A skeletal test'
+  'Also, chaining': 'A skeletal test',
+  'and partitioning': 'A skeletal test',
+  'of test items is possible': 'A skeletal test'
+
+  // Tests to add back to .json
+  // , {
+  //   "Additionally, it can handle multiple batches": {
+  //     "and re-use tests": {
+  //       "via aliasing and directly": {
+  //         "to assert items": true
+  //       }
+  //     }
+  //   }
+  // }, {
+  //   "Also, chaining": {
+  //     "and partitioning": {
+  //       "of test items is possible": true
+  //     }
+  //   }
+  // }
 };
