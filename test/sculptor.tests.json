@@ -1,7 +1,21 @@
 [{
-  "A Vows sculptor": {
-    "processing a set of commands": {
-      "outputs an expected suite": true
+  "A skeletal test": {
+    "can be processed via Sculptor": {
+      "to assert items": true
+    }
+  }
+}, {
+  "Additionally, it can handle multiple batches": {
+    "and re-use tests": {
+      "via aliasing and directly": {
+        "to assert items": true
+      }
+    }
+  }
+}, {
+  "Also, chaining": {
+    "and partitioning": {
+      "of test items is possible": true
     }
   }
 }]

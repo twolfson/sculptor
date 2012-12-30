@@ -4,3 +4,8 @@
 // TODO: Use glob to expand out file paths
 // TODO: Load in tests/skeletons and commands
 // TODO: Export/run the tests -- this might be different depending on engines
+
+
+// vowsSculptor.addBatch(require('./sculptor.tests.json'));
+
+// vowsSculptor['export'](module);
