@@ -3,6 +3,8 @@ var optimist = require('optimist'),
     argv = optimist
              ['default']('engine', 'vows')
              ['default']('dir', 'test')
+             .boolean('no-hints')
+             ['default']('no-hints', false)
              .argv;
 
 // Set up fallbacks for testFiles and commandFiles
@@ -18,7 +20,8 @@ var glob = require('glob'),
 
 // Load in lib and create a new sculptor
 var Sculptor = require(__dirname + '/../lib/sculptor'),
-    engineSculptor = new Sculptor(engine);
+    options = {'hints': !argv['no-hints']},
+    engineSculptor = new Sculptor(engine, options);
 
 // Register the commandFiles then test files
 commandFiles.forEach(function (commandFile) {
