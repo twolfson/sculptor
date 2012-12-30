@@ -8,7 +8,7 @@ var optimist = require('optimist'),
 // Set up fallbacks for testFiles and commandFiles
 var engine = argv.engine,
     dir = argv.dir,
-    testGlob = argv['test-files'] || dir + '/*.test.{js,json}',
+    testGlob = argv['test-files'] || dir + '/*.{test,tests}.{js,json}',
     commandGlob = argv['command-files'] || dir + '/*.' + engine + '.js';
 
 // Expand test and command file paths via glob
@@ -17,16 +17,18 @@ var glob = require('glob'),
     commandFiles = glob.sync(commandGlob);
 
 // Load in lib and create a new sculptor
-var sculptor = require('./lib/sculptor'),
+var Sculptor = require(__dirname + '/../lib/sculptor'),
     engineSculptor = new Sculptor(engine);
 
 // Register the testFiles and commandFiles
 testFiles.forEach(function (testFile) {
-  var tests = require(testFile);
+  var tests = require(process.cwd() + '/' + testFile);
+console.log(tests);
   engineSculptor.addTests(tests);
 });
 commandFiles.forEach(function (commandFile) {
-  var commands = require(commandFile);
+  var commands = require(process.cwd() + '/' + commandFile);
+console.log(commands);
   engineSculptor.addCommands(commands);
 });
 
