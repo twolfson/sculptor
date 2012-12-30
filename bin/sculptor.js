@@ -20,16 +20,14 @@ var glob = require('glob'),
 var Sculptor = require(__dirname + '/../lib/sculptor'),
     engineSculptor = new Sculptor(engine);
 
-// Register the testFiles and commandFiles
-testFiles.forEach(function (testFile) {
-  var tests = require(process.cwd() + '/' + testFile);
-console.log(tests);
-  engineSculptor.addTests(tests);
-});
+// Register the commandFiles then test files
 commandFiles.forEach(function (commandFile) {
   var commands = require(process.cwd() + '/' + commandFile);
-console.log(commands);
   engineSculptor.addCommands(commands);
+});
+testFiles.forEach(function (testFile) {
+  var tests = require(process.cwd() + '/' + testFile);
+  engineSculptor.addTests(tests);
 });
 
 // Export/run the tests

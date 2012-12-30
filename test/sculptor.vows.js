@@ -1,3 +1,4 @@
+var assert = require('assert');
 module.exports = {
   // First batch
   'A skeletal test': function () {
