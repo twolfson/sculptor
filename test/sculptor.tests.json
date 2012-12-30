@@ -4,4 +4,12 @@
       "to assert items": true
     }
   }
+}, {
+  "Additionally, it can handle multiple batches": {
+    "and re-use tests": {
+      "via aliasing and directly": {
+        "to assert items": true
+      }
+    }
+  }
 }]

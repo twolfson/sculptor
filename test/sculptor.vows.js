@@ -30,14 +30,6 @@ module.exports = {
 
   // Tests to add back to .json
   // , {
-  //   "Additionally, it can handle multiple batches": {
-  //     "and re-use tests": {
-  //       "via aliasing and directly": {
-  //         "to assert items": true
-  //       }
-  //     }
-  //   }
-  // }, {
   //   "Also, chaining": {
   //     "and partitioning": {
   //       "of test items is possible": true
