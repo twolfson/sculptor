@@ -18,4 +18,8 @@
       "of test items is possible": true
     }
   }
+}, {
+  "Test for": {
+    "chaining on asserts": true
+  }
 }]

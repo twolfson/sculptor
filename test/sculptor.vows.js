@@ -24,7 +24,7 @@ module.exports = {
 
   // Third batch
   // Chain together some addition functions
-  'Also, chaining': ['one', 'timesTwenty', 'plusOne'],
+  'Also, chaining': ['one', 'times twenty', 'plus one'],
   // Partitioning is when a test is broken down further -- it is not possible to demonstrate
   'and partitioning': 'pass',
   'of test items is possible': function (topic) {
@@ -33,10 +33,17 @@ module.exports = {
   'one': function (topic) {
     return 1;
   },
-  'timesTwenty': function (topic) {
+  'times twenty': function (topic) {
     return topic * 20;
   },
-  'plusOne': function (topic) {
+  'plus one': function (topic) {
     return topic + 1;
-  }
+  },
+
+  // Alias for next
+  'equals twenty-one': 'of test items is possible',
+
+  // Assert chaining
+  'Test for': 'pass',
+  'chaining on asserts': ['one', 'times twenty', 'plus one', 'equals twenty-one']
 };
