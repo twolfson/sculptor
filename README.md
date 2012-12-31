@@ -65,7 +65,7 @@ Sculptor is run via the command line. It takes the following parameters
     - Default: `test/*.tests.{js,json}`. This means any files inside of `test` ending with `.tests.js` or `.tests.json`.
 - `--command-files {{commandFiles}}` - [Minimatch pattern][minimatch] to find command files by. This is the `content` piece as described above.
     - Default: `test/*.{{engine}}.js`. If the `engine` is vows, this means any files inside of `test` ending with `.vows.js`.
-- `--no-hints` [no-hints][] - Turn off hinting of when commands are not found. By default, this is disabled and you are notified `Command could not be found: {{commandName}}`.
+- `--no-hints` - Turn off hinting of when commands are not found. By default, this is disabled and you are notified `Command could not be found: {{commandName}}`.
 
 [minimatch]: https://github.com/isaacs/minimatch
 
@@ -77,7 +77,7 @@ Asynchronous behavior (e.g. parallel vs series) will change depending on the eng
 ### Content format
 Content files are expected to be an object with strings that match the test names and values which are functions to run at each level.
 
-In the case that keys do not line up, Sculptor has been designed to notify you via a `console.log` (see [CLI usage#no-hints][no-hints]).
+In the case that keys do not line up, Sculptor has been designed to notify you via a `console.log` (see [CLI usage#no-hints][cli]).
 
 #### Chaining
 A bonus feature
