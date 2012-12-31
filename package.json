@@ -28,6 +28,12 @@
   "scripts": {
     "test": "node bin/sculptor.js"
   },
+  "dependencies": {
+    "traverse": "~0.6.3",
+    "vows": "~0.7.0",
+    "optimist": "~0.3.5",
+    "glob": "~3.1.14"
+  },
   "devDependencies": {
     "grunt": "~0.3.17"
   },
@@ -38,11 +44,5 @@
     "agnostic",
     "bdd",
     "test"
-  ],
-  "dependencies": {
-    "traverse": "~0.6.3",
-    "vows": "~0.7.0",
-    "optimist": "~0.3.5",
-    "glob": "~3.1.14"
-  }
+  ]
 }
