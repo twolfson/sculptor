@@ -79,14 +79,73 @@ Content files are expected to be an object with strings that match the test name
 
 In the case that keys do not line up, Sculptor has been designed to notify you via a `console.log` (see [CLI usage#no-hints](#cli-usage)).
 
-#### Chaining
-A bonus feature
+#### Aliasing/Chaining commands
+A bonus feature is the ability to alias and chain commands. Aliasing is done by using a string of the command you would like to alias.
+```js
+{
+  'A circle': function () {
+    return new Circle();
+  },
+  'A round object': 'A circle'
+}
+```
 
-// TODO: README notes on chaining at object leafs, we make assumption of topic -> topic -> assert
-// We equally could assert -> assert -> assert however, we have chosen against it -- honestly, it is up to the engine implementors
+Chaining is performed by using an array of strings. These strings are broken out into a nested object for interprettation by the engine.
+```js
+{
+  'A banana': function () {
+    return new Banana();
+  },
+  'when peeled': function (banana) {
+    return banana.peel();
+  },
+  'A peeled banana': ['A banana', 'when peeled']
+}
+```
+
+***Warning:*** Chaining at the leafs of tests can be confusing. Instead of the chain being asserted, they are run as nested objects meaning **only the last item** in the chain is an assertion.
 
 ## Examples
-_(Coming soon)_
+An implementation of Sculptor can be found within the [test][test] folder.
+
+A pre-Sculptor implementation can be found within [node-jsmin-sourcemap][jsmin-sourcemap].
+
+[test]: https://github.com/twolfson/sculptor/tree/master/test
+[jsmin-sourcemap]: https://github.com/twolfson/node-jsmin-sourcemap/tree/master/tests
+
+Additionally, to make my life easier, I use an object between my topics. This makes them order agnostic and easily chainable.
+```js
+// Outline
+{
+  'a': {
+    'b': {
+      'some assertion': true
+    }
+  },
+  'b': {
+    'a': {
+      'some assertion': true
+    }
+  }
+}
+
+// Content
+{
+  'a': function (topic) {
+    topic = topic || {};
+    topic.a = 1;
+    return topic;
+  },
+  'b': function (topic) {
+    topic = topic || {};
+    topic.b = 1;
+    return topic;
+  },
+  'some assertion': function (topic) {
+    assert.equal(topic.a, topic.b);
+  }
+}
+```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint your code using [grunt](https://github.com/gruntjs/grunt) and test via `npm test`.
