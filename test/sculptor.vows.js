@@ -14,7 +14,7 @@ module.exports = {
 
   // Utility functions
   'pass': function (topic) {
-    return topic;
+    return topic || {};
   },
 
   // Second batch
@@ -46,6 +46,6 @@ module.exports = {
   'equals twenty-one': 'of test items is possible',
 
   // Assert chaining
-  'Test for': ['one', 'times twenty', 'plus one'],
-  'chaining on asserts': 'equals twenty-one'
+  'Test for': 'pass',
+  'chaining on asserts': ['one', 'times twenty', 'plus one', 'equals twenty-one']
 };
