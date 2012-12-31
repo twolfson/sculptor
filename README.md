@@ -14,6 +14,7 @@ Install the module via: `sudo npm install sculptor -g`
 
 Tests are broken into two pieces:
 - Outline, a barebones [JSON][json] [BDD][bdd] description of what is being tested
+
 ```javascript
 // test/fruit.tests.json
 {
@@ -25,6 +26,7 @@ Tests are broken into two pieces:
 ```
 
 - Content, an implementation of the tests listed within the outline
+
 ```javascript
 // test/fruit.vows.js
 {
@@ -40,15 +42,15 @@ Tests are broken into two pieces:
 }
 ```
 
-Then, the test is run via the command line
+Then, tests can be run via the command line
 ```shell
-sculptor # Runs test via vows
+sculptor
 ```
 
-## Benefits
-- Implementations have a common format which allows for easier transitioning
-- With this text based association, chaining/aliasing is trivial to add (and has been)
-- Intent and purpose of tests are very clear since they are described entirely separate
+### Benefits
+- Implementations have a common format which allows for easier transitioning.
+- With this text based association, chaining/aliasing is trivial to add (and has been).
+- Intent and purpose of tests are very clear since they are described entirely separate.
 
 [json]: http://json.org/
 [bdd]: http://en.wikipedia.org/wiki/Behavior-driven_development
