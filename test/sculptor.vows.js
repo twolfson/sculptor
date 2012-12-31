@@ -23,21 +23,21 @@ module.exports = {
   'via aliasing and directly': 'can be processed via Sculptor',
 
   // Third batch
-  // TODO: Actually use partitioning and chaining
-  'Also, chaining': ['add1', 'add2', 'add3'],
+  // Chain together some addition functions
+  'Also, chaining': ['one', 'timesTwenty', 'plusOne'],
   // Partitioning is when a test is broken down further -- it is not possible to demonstrate
   'and partitioning': 'pass',
   'of test items is possible': function (topic) {
-    assert.equal(topic, 6, 'One plus two plus three equals six');
+    console.log('asserting');
+    assert.equal(topic, 21, 'One times twenty plus one equals twenty-one');
   },
-  'add1': function (topic) {
-    topic = topic || 0;
+  'one': function (topic) {
+    return 1;
+  },
+  'timesTwenty': function (topic) {
+    return topic * 20;
+  },
+  'plusOne': function (topic) {
     return topic + 1;
-  },
-  'add2': function (topic) {
-    return topic + 2;
-  },
-  'add3': function (topic) {
-    return topic + 3;
   }
 };
