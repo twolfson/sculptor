@@ -48,11 +48,17 @@ This yields the following benefits:
 [bdd]: http://en.wikipedia.org/wiki/Behavior-driven_development
 [examples]: https://github.com/twolfson/sculptor/tree/master/examples
 
-## Usages
+## Usage
 
 Sculptor can be install via npm
-```
+```shell
 sudo npm install -g sculptor
+```
+
+Test outlines and content should be stored within the `test` folder with the file formats:
+```shell
+*.tests.json # outline - e.g. test/shapes.tests.json
+*.{{engine}}.js # content - e.g. test/shapes.vows.js for vows content
 ```
 
 Then, tests can be run via the command line
@@ -62,16 +68,20 @@ sculptor
 
 ## Documentation
 ### CLI usage
-Sculptor is run via the command line. It takes the following parameters
-- `--engine {{engine}}` - Test engine to run under (e.g. `vows`, `mocha`, `testling`, `selenium+mocha`)
-    - Default: `vows`. Only one available currently is `vows`, all others are in development.
-- `--dir {{dir}}` - Directory to read in files and command files from
-    - Default: `test`
-- `--test-files {{testFiles}}` - [Minimatch pattern][minimatch] to find test files by. This is the `outline` piece as described above.
-    - Default: `test/*.tests.{js,json}`. This means any files inside of `test` ending with `.tests.js` or `.tests.json`.
-- `--command-files {{commandFiles}}` - [Minimatch pattern][minimatch] to find command files by. This is the `content` piece as described above.
-    - Default: `test/*.{{engine}}.js`. If the `engine` is vows, this means any files inside of `test` ending with `.vows.js`.
-- `--no-hints` - Turn off hinting of when commands are not found. By default, this is disabled and you are notified `Command could not be found: {{commandName}}`.
+Sculptor is run via the command line and can be configured as follows:
+```shell
+sculptor --engine mocha --dir src-test
+```
+
+`--engine {{engine}}` (Default: `vows`) - Test engine to run under (e.g. `vows`, `mocha`, `testling`, `selenium+mocha`). Only `vows` is available currently, all others are in development.
+
+`--dir {{dir}}` (Default: `test`) - Directory to read in files and command files from.
+
+`--test-files {{testFiles}}` (Default: `test/*.tests.{js,json}`) - [Minimatch pattern][minimatch] to find test files by. This is the `outline` piece as described above. This means any files inside of `test` ending with `.tests.js` or `.tests.json`.
+
+`--command-files {{commandFiles}}` (Default: `test/*.{{engine}}.js`) - [Minimatch pattern][minimatch] to find command files by. This is the `content` piece as described above. If the `engine` is vows, this means any files inside of `test` ending with `.vows.js`.
+
+`--no-hints` - Turn off hinting of when commands are not found. By default, this is disabled and you are notified `Command could not be found: {{commandName}}`.
 
 [minimatch]: https://github.com/isaacs/minimatch
 
