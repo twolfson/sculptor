@@ -12,4 +12,10 @@
       }
     }
   }
+}, {
+  "Also, chaining": {
+    "and partitioning": {
+      "of test items is possible": true
+    }
+  }
 }]

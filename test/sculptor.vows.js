@@ -24,16 +24,20 @@ module.exports = {
 
   // Third batch
   // TODO: Actually use partitioning and chaining
-  'Also, chaining': 'A skeletal test',
-  'and partitioning': 'A skeletal test',
-  'of test items is possible': 'A skeletal test'
-
-  // Tests to add back to .json
-  // , {
-  //   "Also, chaining": {
-  //     "and partitioning": {
-  //       "of test items is possible": true
-  //     }
-  //   }
-  // }
+  'Also, chaining': ['add1', 'add2', 'add3'],
+  // Partitioning is when a test is broken down further -- it is not possible to demonstrate
+  'and partitioning': 'pass',
+  'of test items is possible': function (topic) {
+    assert.equal(topic, 6, 'One plus two plus three equals six');
+  },
+  'add1': function (topic) {
+    topic = topic || 0;
+    return topic + 1;
+  },
+  'add2': function (topic) {
+    return topic + 2;
+  },
+  'add3': function (topic) {
+    return topic + 3;
+  }
 };
