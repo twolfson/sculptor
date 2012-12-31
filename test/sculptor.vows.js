@@ -28,7 +28,6 @@ module.exports = {
   // Partitioning is when a test is broken down further -- it is not possible to demonstrate
   'and partitioning': 'pass',
   'of test items is possible': function (topic) {
-    console.log('asserting');
     assert.equal(topic, 21, 'One times twenty plus one equals twenty-one');
   },
   'one': function (topic) {
