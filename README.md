@@ -9,9 +9,6 @@ Sculptor is a test runner wrapper for any testing framework. Currently supported
 [testling]: http://testling.com/
 [selenium]: https://github.com/Camme/webdriverjs
 
-## Getting Started
-Install the module via: `sudo npm install sculptor -g`
-
 Tests are broken into two pieces:
 - Outline, a barebones [JSON][json] [BDD][bdd] description of what is being tested
 
@@ -42,19 +39,26 @@ Tests are broken into two pieces:
 }
 ```
 
-Then, tests can be run via the command line
-```shell
-sculptor
-```
-
-### Benefits
-- Implementations have a common format which allows for easier transitioning.
-- With this text based association, chaining/aliasing is trivial to add (and has been).
-- Intent and purpose of tests are very clear since they are described entirely separate.
+This yields the following benefits:
+- Common format for easier transitioning between implementations.
+- Chaining/aliasing of commands is trivial to add (and has been).
+- Description/purpose of tests is succint and clear.
 
 [json]: http://json.org/
 [bdd]: http://en.wikipedia.org/wiki/Behavior-driven_development
 [examples]: https://github.com/twolfson/sculptor/tree/master/examples
+
+## Usages
+
+Sculptor can be install via npm
+```
+sudo npm install -g sculptor
+```
+
+Then, tests can be run via the command line
+```shell
+sculptor
+```
 
 ## Documentation
 ### CLI usage
