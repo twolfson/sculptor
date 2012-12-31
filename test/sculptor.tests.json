@@ -22,4 +22,18 @@
   "Test for": {
     "chaining on asserts": true
   }
+}, {
+  "We also": {
+    "support asserting": {
+      "at multiple levels": {
+        "and multiple times": {
+          "within the": true,
+          "same level": true,
+          "assert here": true
+        },
+       "assert there": true
+      },
+      "assert everywhere": true
+    }
+  }
 }]

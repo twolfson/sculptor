@@ -45,5 +45,37 @@ module.exports = {
 
   // Assert chaining
   'Test for': 'pass',
-  'chaining on asserts': ['one', 'times twenty', 'plus one', 'equals twenty-one']
+  'chaining on asserts': ['one', 'times twenty', 'plus one', 'equals twenty-one'],
+
+  // Multi-level and multiple assertions
+  'We also': function () {
+    return {'color': 'red'};
+  },
+  'support asserting': function (topic) {
+    topic.shiny = true;
+    return topic;
+  },
+  'at multiple levels': function (topic) {
+    topic.crunchy = true;
+    return topic;
+  },
+  'and multiple times': function (topic) {
+    topic.fruit = true;
+    return topic;
+  },
+  'within the': function (topic) {
+    assert(topic.fruit, 'The topic is a fruit');
+  },
+  'same level': function (topic) {
+    assert(topic.crunchy, 'The topic is crunchy');
+  },
+  'assert here': function (topic) {
+    assert(topic.shiny, 'The topic is shiny');
+  },
+  'assert there': function (topic) {
+    assert.notEqual(topic.color, 'green', 'The topic is not green');
+  },
+  'assert everywhere': function (topic) {
+    assert.equal(topic.color, 'red', 'The topic is red');
+  }
 };
