@@ -1,6 +1,6 @@
 {
   "name": "sculptor",
-  "description": "Library for sculpting framework/language agnostic BDD tests",
+  "description": "Library for sculpting \"framework/language agnostic\" BDD tests",
   "version": "0.1.0",
   "homepage": "https://github.com/twolfson/sculptor",
   "author": {
