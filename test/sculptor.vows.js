@@ -45,5 +45,5 @@ module.exports = {
 
   // Assert chaining
   'Test for': 'pass',
-  'chaining on asserts': ['one', 'times twenty', 'plus one', 'equals twenty-one']
+  // 'chaining on asserts': ['one', 'times twenty', 'plus one', 'equals twenty-one']
 };
