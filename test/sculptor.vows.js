@@ -77,5 +77,14 @@ module.exports = {
   },
   'assert everywhere': function (topic) {
     assert.equal(topic.color, 'red', 'The topic is red');
+  },
+
+  // Asynchronous items, chaining, and assertions{
+  "Lastly, we support asynchronous items": function () {
+    var callback = this.callback;
+    callback(null, {'firstCalled': true});
+  },
+  "assertions cannot be asynchronous": function (topic) {
+    assert(topic.firstCalled);
   }
 };

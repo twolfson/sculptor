@@ -36,4 +36,11 @@
       "assert everywhere": true
     }
   }
+}, {
+  "Lastly, we support asynchronous items": {
+    "asynchronous command chains": {
+      "and asynchronous leaf chains": true
+    },
+    "assertions cannot be asynchronous": true
+  }
 }]
