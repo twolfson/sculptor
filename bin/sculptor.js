@@ -23,14 +23,14 @@ var Sculptor = require(__dirname + '/../lib/sculptor'),
     options = {'hints': !argv['no-hints']},
     engineSculptor = new Sculptor(engine, options);
 
-// Register the commandFiles then test files
-commandFiles.forEach(function (commandFile) {
-  var commands = require(process.cwd() + '/' + commandFile);
-  engineSculptor.addCommands(commands);
-});
+// Register the test and command files
 testFiles.forEach(function (testFile) {
   var tests = require(process.cwd() + '/' + testFile);
   engineSculptor.addTests(tests);
+});
+commandFiles.forEach(function (commandFile) {
+  var commands = require(process.cwd() + '/' + commandFile);
+  engineSculptor.addCommands(commands);
 });
 
 // Export/run the tests
