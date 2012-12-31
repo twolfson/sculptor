@@ -55,7 +55,7 @@ sculptor # Runs test via vows
 [examples]: https://github.com/twolfson/sculptor/tree/master/examples
 
 ## Documentation
-### CLI usage [cli]
+### CLI usage
 Sculptor is run via the command line. It takes the following parameters
 - `--engine {{engine}}` - Test engine to run under (e.g. `vows`, `mocha`, `testling`, `selenium+mocha`)
     - Default: `vows`. Only one available currently is `vows`, all others are in development.
@@ -77,7 +77,7 @@ Asynchronous behavior (e.g. parallel vs series) will change depending on the eng
 ### Content format
 Content files are expected to be an object with strings that match the test names and values which are functions to run at each level.
 
-In the case that keys do not line up, Sculptor has been designed to notify you via a `console.log` (see [CLI usage#no-hints][cli]).
+In the case that keys do not line up, Sculptor has been designed to notify you via a `console.log` (see [CLI usage#no-hints](#cli-usage)).
 
 #### Chaining
 A bonus feature
