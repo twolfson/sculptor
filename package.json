@@ -21,6 +21,7 @@
       "url": "https://github.com/twolfson/sculptor/blob/master/LICENSE-MIT"
     }
   ],
+  "bin": "bin/sculptor.js",
   "main": "lib/sculptor",
   "engines": {
     "node": ">= 0.6.0"
