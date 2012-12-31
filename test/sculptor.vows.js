@@ -80,11 +80,31 @@ module.exports = {
   },
 
   // Asynchronous items, chaining, and assertions{
-  "Lastly, we support asynchronous items": function () {
+  'Lastly, we support asynchronous items': function () {
     var callback = this.callback;
     callback(null, {'firstCalled': true});
   },
-  "assertions cannot be asynchronous": function (topic) {
-    assert(topic.firstCalled);
+  'async1': function (topic) {
+    var callback = this.callback;
+    topic.async1 = topic.firstCalled;
+    callback(null, topic);
+  },
+  'async2': function (topic) {
+    var callback = this.callback;
+    topic.async2 = topic.async1;
+    callback(null, topic);
+  },
+  'async3': function (topic) {
+    var callback = this.callback;
+    topic.async3 = topic.async2;
+    callback(null, topic);
+  },
+  'asyncAssert': function (topic) {
+    assert(topic.async3, 'Async assert was called after async1, async2, async3 were called in order');
+  },
+  'asynchronous command chains': ['async1', 'async2'],
+  'and asynchronous leaf chains': ['async3', 'asyncAssert'],
+  'assertions cannot be asynchronous': function (topic) {
+    assert(topic.firstCalled, 'Async assert was called after asynchronous topic');
   }
 };
