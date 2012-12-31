@@ -42,3 +42,6 @@ engineSculptor['export'](module);
 
 // TODO: Export/run the tests -- this might be different depending on engines
 // TODO: We might want to start handling engines as done in consolidate.js
+
+// TODO: README notes on chaining at object leafs, we make assumption of topic -> topic -> assert
+// We equally could assert -> assert -> assert however, we have chosen against it -- honestly, it is up to the engine implementors
