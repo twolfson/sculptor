@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // Using optimist determine engine, test files, and command files
 var optimist = require('optimist'),
     argv = optimist
