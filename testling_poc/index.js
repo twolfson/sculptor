@@ -1,8 +1,11 @@
 // Load in lib and create a new sculptor
 var Sculptor = require(__dirname + '/../lib/sculptor'),
     engine = 'testling',
-    options = {'hints': true},
+    engineOptions = require('./config')[engine],
+    options = {'hints': true, 'engineOptions': engineOptions},
     engineSculptor = new Sculptor(engine, options);
+
+// TODO: Document example.json
 
 // Register the test and command files
 var testFiles = [__dirname + '/tests.json'],
@@ -15,6 +18,12 @@ commandFiles.forEach(function (commandFile) {
   var commands = require(commandFile);
   engineSculptor.addCommands(commands);
 });
+
+// Logic reference: We will need to flatten each and every root to leaf JSON path into a test
+// The reason is that we cannot handle multiple asynchronous topics for each action
+// TODO: Definitely need strong warning about no closuring etc in testling tests. They must be directly convertable via toString
+
+// TODO: Notes on config.json for testling
 
 // Export/run the tests
 console.log(engineSculptor['export'](module));
