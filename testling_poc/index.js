@@ -26,4 +26,4 @@ commandFiles.forEach(function (commandFile) {
 // TODO: Notes on config.json for testling
 
 // Export/run the tests
-console.log(engineSculptor['export'](module));
+engineSculptor['export'](module);
