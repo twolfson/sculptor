@@ -17,4 +17,4 @@ commandFiles.forEach(function (commandFile) {
 });
 
 // Export/run the tests
-engineSculptor['export'](module);
+console.log(engineSculptor['export'](module));
