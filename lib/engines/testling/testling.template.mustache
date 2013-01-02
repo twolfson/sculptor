@@ -1,5 +1,5 @@
-var testling = require('testling');
+var test = require('testling');
 
 {{#tests}}
-test({{key}}, {{value}});
+test('{{key}}', {{{value}}});
 {{/tests}}
