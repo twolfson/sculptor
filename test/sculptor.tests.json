@@ -1,0 +1,7 @@
+[{
+  "A skeletal test": {
+    "can be processed via Sculptor": {
+      "to assert items": true
+    }
+  }
+}]
