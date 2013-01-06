@@ -39,3 +39,7 @@ engineSculptor['export'](module);
 
 // TODO: Export/run the tests -- this might be different depending on engines
 // TODO: We might want to start handling engines as done in consolidate.js
+
+// TODO: The purpose of this branch is to pursue thoughts around an 'output' (-o) mode
+// TODO: It expands the coverage of the library by allowing libs like mocha to do their cross-browser testing
+// TODO: The main sacrifice is we might need to do an eval =(
