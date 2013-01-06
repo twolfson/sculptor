@@ -20,13 +20,17 @@ vows.addBatch({
 
 // PROCESS:
 // Read in all command files
-// Any time there is a var outside of an exported function
-  // TODO: Good luck detecting that
-  // Copy it over
-  // In fact, this extends to anything outside of a module.exports
+  // If we see something, spit it out
+  // When we enter an export item
+    // Silence the export
+  // When we leave an export item
+    // Unmute the export
 
-  // Anything that is exported, save the source of
-  // NOTE: THIS COULD BE DONE VIA VANILLA JS
+// TODO: Edge case, what if they do var a = fn; then module.exports = a;
+// Technically, there is no harm in this since `a` is never invoked. Just dirty.
+
+// require command files normally
+  // Convert all exported items to strings?
 
 // Read in test files and process via engine
   // VANILLA JS
