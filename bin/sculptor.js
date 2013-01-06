@@ -26,11 +26,17 @@ var Sculptor = require(__dirname + '/../lib/sculptor'),
 
 var fs = require('fs'),
     burrito = require('burrito');
-testFiles.forEach(function (testFile) {
-  var filepath = process.cwd() + '/' + testFile,
+// testFiles.forEach(function (file) {
+commandFiles.forEach(function (file) {
+  var filepath = process.cwd() + '/' + file,
       input = fs.readFileSync(filepath, 'utf8'),
       output = burrito(input, function (node) {
-        console.log('NODE: ', node);
+        // console.log('NODE: ', node);
+        console.log('NODE NAME: ', node.name);
+        console.log('NODE VALUE: ', node.value);
+        console.log('NODE SOURCE: ', node.source());
+        // console.log('NODE PARENT: ', node.parent());
+        console.log('NODE LABEL: ', node.label());
       });
   console.log('OUTPUT: ', output);
 });
