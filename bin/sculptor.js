@@ -21,21 +21,32 @@ var glob = require('glob'),
 
 // Load in lib and create a new sculptor
 var Sculptor = require(__dirname + '/../lib/sculptor'),
-    options = {'hints': !argv['no-hints']},
-    engineSculptor = new Sculptor(engine, options);
+    options = {'hints': !argv['no-hints']};
+    // engineSculptor = new Sculptor(engine, options);
 
-// Register the test and command files
+var fs = require('fs'),
+    burrito = require('burrito');
 testFiles.forEach(function (testFile) {
-  var tests = require(process.cwd() + '/' + testFile);
-  engineSculptor.addTests(tests);
-});
-commandFiles.forEach(function (commandFile) {
-  var commands = require(process.cwd() + '/' + commandFile);
-  engineSculptor.addCommands(commands);
+  var filepath = process.cwd() + '/' + testFile,
+      input = fs.readFileSync(filepath, 'utf8'),
+      output = burrito(input, function (node) {
+        console.log('NODE: ', node);
+      });
+  console.log('OUTPUT: ', output);
 });
 
-// Export/run the tests
-engineSculptor['export'](module);
+// // Register the test and command files
+// testFiles.forEach(function (testFile) {
+//   var tests = require(process.cwd() + '/' + testFile);
+//   engineSculptor.addTests(tests);
+// });
+// commandFiles.forEach(function (commandFile) {
+//   var commands = require(process.cwd() + '/' + commandFile);
+//   engineSculptor.addCommands(commands);
+// });
+
+// // Export/run the tests
+// engineSculptor['export'](module);
 
 // TODO: Export/run the tests -- this might be different depending on engines
 // TODO: We might want to start handling engines as done in consolidate.js
