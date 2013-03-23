@@ -82,22 +82,30 @@ module.exports = {
   // Asynchronous items, chaining, and assertions{
   'Lastly, we support asynchronous items': function () {
     var callback = this.callback;
-    callback(null, {'firstCalled': true});
+    setTimeout(function () {
+      callback(null, {'firstCalled': true});
+    }, 1);
   },
   'async1': function (topic) {
     var callback = this.callback;
     topic.async1 = topic.firstCalled;
-    callback(null, topic);
+    setTimeout(function () {
+      callback(null, topic);
+    }, 1);
   },
   'async2': function (topic) {
     var callback = this.callback;
     topic.async2 = topic.async1;
-    callback(null, topic);
+    setTimeout(function () {
+      callback(null, topic);
+    }, 1);
   },
   'async3': function (topic) {
     var callback = this.callback;
     topic.async3 = topic.async2;
-    callback(null, topic);
+    setTimeout(function () {
+      callback(null, topic);
+    }, 1);
   },
   'asyncAssert': function (topic) {
     assert(topic.async3, 'Async assert was called after async1, async2, async3 were called in order');
