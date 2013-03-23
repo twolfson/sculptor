@@ -1,9 +1,7 @@
 var assert = require('assert');
 module.exports = {
   // Utility functions
-  'pass': function () {
-    return topic || {};
-  },
+  'pass': function () {},
 
   // First batch
   'A skeletal test': 'pass',
@@ -58,19 +56,19 @@ module.exports = {
     this.topic.fruit = true;
   },
   'within the': function () {
-    assert(topic.fruit, 'The topic is a fruit');
+    assert(this.topic.fruit, 'The topic is a fruit');
   },
   'same level': function () {
-    assert(topic.crunchy, 'The topic is crunchy');
+    assert(this.topic.crunchy, 'The topic is crunchy');
   },
   'assert here': function () {
-    assert(topic.shiny, 'The topic is shiny');
+    assert(this.topic.shiny, 'The topic is shiny');
   },
   'assert there': function () {
-    assert.notEqual(topic.color, 'green', 'The topic is not green');
+    assert.notEqual(this.topic.color, 'green', 'The topic is not green');
   },
   'assert everywhere': function () {
-    assert.equal(topic.color, 'red', 'The topic is red');
+    assert.equal(this.topic.color, 'red', 'The topic is red');
   },
 
  // Asynchronous items, chaining, and assertions{
