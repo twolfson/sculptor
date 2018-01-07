@@ -5,7 +5,7 @@ Library for sculpting "framework/language agnostic" BDD tests
 Sculptor is a test runner wrapper for any testing framework. Currently supported frameworks are: [vows][vows], [mocha][mocha] (planned), [testling][testling] (planned), [selenium+mocha][selenium] (planned).
 
 [vows]: http://vowsjs.org/
-[mocha]: http://visionmedia.github.com/mocha/
+[mocha]: http://mochajs.org/
 [testling]: http://testling.com/
 [selenium]: https://github.com/Camme/webdriverjs
 
